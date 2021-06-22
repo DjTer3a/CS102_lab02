@@ -24,10 +24,25 @@ public class MySimpleURLReader extends SimpleURLReader{
         return name;
     }
 
-    public String getPageContents(){
-        String pageContent;
-        pageContent = super.getPageContents();
-        return pageContent;
+
+    public int getNumberOfCSSLinks(){
+        int count;
+        String UnfilteredPageContent;
+        UnfilteredPageContent = super.getPageContents();
+        count = 0;
+        if(UnfilteredPageContent.contains(".css")){
+            for(int i =0; i< UnfilteredPageContent.length(); i++){
+                        if(UnfilteredPageContent.charAt(i) == '.' && UnfilteredPageContent.charAt(i+1) == 'c' && UnfilteredPageContent.charAt(i+2) == 's' && UnfilteredPageContent.charAt(i+3) == 's'){
+                            count++;
+                        }
+                    }
+
+        }
+        else{
+            count = 0;
+        }
+        
+        return count;
     }
 
     public int getLineCount(){
@@ -35,12 +50,22 @@ public class MySimpleURLReader extends SimpleURLReader{
         lineCount = super.getLineCount();
         
         return lineCount;
-    }   
+    }
+    
+    public String getUnfilteredPageContents(){
+        String UnfilteredPageContent;
+        UnfilteredPageContent = super.getPageContents();
+        return UnfilteredPageContent;
+    }
+    
+
+
 public static void main(String[] args){
-        HtmlScraperTest obj = new HtmlScraperTest("http://www.cs.bilkent.edu.tr/~ozturk/cs102/housman.txt");
+        MySimpleURLReader obj = new MySimpleURLReader("http://www.cs.bilkent.edu.tr/~ozturk/cs102/scrapethissite.html");
         System.out.println(obj.getUrl());
         System.out.println(obj.getName());
-        System.out.println(obj.getPageContents());
+        System.out.print(obj.getUnfilteredPageContents());
         System.out.println(obj.getLineCount());
+        System.out.println(obj.getNumberOfCSSLinks());
     }
 }
