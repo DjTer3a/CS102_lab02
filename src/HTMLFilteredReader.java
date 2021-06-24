@@ -1,11 +1,30 @@
+/**
+ * Lab02 Instructions found on moodle
+ * 
+ * Style guidlines URL:-
+ * http://www.cs.bilkent.edu.tr/~adayanik/cs101/practicalwork/styleguidelines.htm
+ * 
+ * 
+ * @author Mostafa Higazy
+ * @version 24/06/2021
+ */
+
+
+
 public class HTMLFilteredReader extends MySimpleURLReader{
     String url ="";
 
+
+    //Empty Constructor
     public HTMLFilteredReader(String url) {
         super(url);
         this.url =url;
     }
 
+    /**
+     * method to return page contents without html code.
+     *  @return String Filtered   
+     */
     public String getPageContents(){
         String UnfilteredPageContent;
         String Filtered= "";

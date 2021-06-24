@@ -1,9 +1,27 @@
+/**
+ * Lab02 Instructions found on moodle
+ * 
+ * Style guidlines URL:-
+ * http://www.cs.bilkent.edu.tr/~adayanik/cs101/practicalwork/styleguidelines.htm
+ * 
+ * 
+ * @author Mostafa Higazy
+ * @version 24/06/2021
+ */
 
+ 
 public class WordSearch extends HTMLFilteredReader {
+
+        //Empty Constructor
         public WordSearch (String url){
             super(url);
         }
    
+
+        /**
+         * method to check page if the site contains the word.
+         *  @return void   
+         */
         public void check(String word){
             String text = super.getPageContents();
             int counter = 0;
