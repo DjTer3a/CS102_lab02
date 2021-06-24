@@ -24,28 +24,6 @@ public class MySimpleURLReader extends SimpleURLReader{
         return name;
     }
 
-    public String getPageContents(){
-        String UnfilteredPageContent;
-        String Filtered= "";
-        UnfilteredPageContent = super.getPageContents();
-        boolean check =true;
-        for(int i =0; i< UnfilteredPageContent.length(); i++){
-            if(UnfilteredPageContent.charAt(i) == '<'){
-                check = false;
-            }
-            else if(UnfilteredPageContent.charAt(i) == '>'){
-                check =true;
-            }
-            else if (check == true){
-                Filtered+=UnfilteredPageContent.charAt(i);
-            }
-            else{
-                check = false;
-            }
-        }
-        return Filtered;
-    }
-
     public int getNumberOfCSSLinks(){
         int count;
         String UnfilteredPageContent;
