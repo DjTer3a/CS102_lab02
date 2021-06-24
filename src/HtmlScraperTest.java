@@ -11,6 +11,10 @@
 
 
 public class HtmlScraperTest extends WordSearch {
+    public HtmlScraperTest(String url) {
+        super(url);
+    }
+
     public static void main(String[] args){
 
             //testing MySimpleURLReader
