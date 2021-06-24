@@ -26,12 +26,12 @@ public class MySimpleURLReader extends SimpleURLReader{
 
     public int getNumberOfCSSLinks(){
         int count;
-        String UnfilteredPageContent;
-        UnfilteredPageContent = super.getPageContents();
+        String PageContent;
+        PageContent = super.getPageContents();
         count = 0;
-        if(UnfilteredPageContent.contains(".css")){
-            for(int i =0; i< UnfilteredPageContent.length(); i++){
-                        if(UnfilteredPageContent.charAt(i) == '.' && UnfilteredPageContent.charAt(i+1) == 'c' && UnfilteredPageContent.charAt(i+2) == 's' && UnfilteredPageContent.charAt(i+3) == 's'){
+        if(PageContent.contains(".css")){
+            for(int i =0; i< PageContent.length(); i++){
+                        if(PageContent.charAt(i) == '.' && PageContent.charAt(i+1) == 'c' && PageContent.charAt(i+2) == 's' && PageContent.charAt(i+3) == 's'){
                             count++;
                         }
                     }
@@ -51,10 +51,10 @@ public class MySimpleURLReader extends SimpleURLReader{
         return lineCount;
     }
     
-    public String getUnfilteredPageContents(){
-        String UnfilteredPageContent;
-        UnfilteredPageContent = super.getPageContents();
-        return UnfilteredPageContent;
+    public String getPageContents(){
+        String PageContent;
+        PageContent = super.getPageContents();
+        return PageContent;
     }
     
 
