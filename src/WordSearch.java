@@ -14,7 +14,7 @@ public class WordSearch extends HTMLFilteredReader {
                     
                     counter++;
                     int idx = i;
-                    System.out.println("Found the word ("+word+") at the index "+ idx + " and ends at the index of "+ (idx+word.length())   );
+                    System.out.println("Found the word ("+word+") at the index "+ idx + " and ends at the index of "+ (idx+word.length()-1)   );
                 }
                 }
                 System.out.println("The word was repeated this many times:-"+counter);

@@ -11,7 +11,10 @@ public class HtmlScraperTest extends WordSearch {
 
             WordSearch obj2 = new WordSearch("http://www.cs.bilkent.edu.tr/~ozturk/cs102/scrapethissite.html");
 
+            obj2.check("Turkey");
             obj2.check("Ankara");
+            obj2.check("Capital");
+            obj2.check("Mordor");
         }
 
 }
